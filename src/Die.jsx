@@ -1,9 +1,9 @@
 
-export default function Die() {
+export default function Die(props) {
 
   return(
     <div>
-      <p></p>
+      <p>{props.value}</p>
     </div>
   )
 
