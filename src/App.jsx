@@ -6,7 +6,16 @@ import "./styles/General.css"
 
 export default function App() {
   
+  function allNewDice() {
+    const newDice = []
+    for(let i = 0; i < 10; i++){
+      let value = Math.floor(Math.random() * 6) + 1
+      newDice.push(value)
+    }
+     console.log(newDice) 
+  }
 
+  allNewDice()
 
   return (
     <main className="tenzies-app">
