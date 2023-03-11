@@ -17,9 +17,12 @@ export default function App() {
      return newDice
   }
 
+  function rollDice() {
+    setDice(allNewDice())
+  }
+
   const dieElements = dice.map(die => (
     <Die 
-    key = {die}
     value = {die}
     />
   ))
@@ -34,6 +37,7 @@ export default function App() {
       <div className="dice-grid">
         {dieElements}
       </div>
+      <button onClick={rollDice}>Roll</button>
     </main>
   )
 }
