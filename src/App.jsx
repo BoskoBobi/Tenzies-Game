@@ -11,8 +11,11 @@ export default function App() {
   function allNewDice() {
     const newDice = []
     for(let i = 0; i < 10; i++){
-      let value = Math.floor(Math.random() * 6) + 1
-      newDice.push(value)
+      let obj = {
+        value: Math.floor(Math.random() * 6) + 1,
+        isHeld: false
+      }
+      newDice.push(obj)
     }
      return newDice
   }
@@ -23,7 +26,7 @@ export default function App() {
 
   const dieElements = dice.map(die => (
     <Die 
-    value = {die}
+    value = {die.value}
     />
   ))
 
@@ -37,7 +40,7 @@ export default function App() {
       <div className="dice-grid">
         {dieElements}
       </div>
-      <button onClick={rollDice}>Roll</button>
+      <button onClick={rollDice} className="roll-button">Roll</button>
     </main>
   )
 }
