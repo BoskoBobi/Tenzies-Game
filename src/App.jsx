@@ -14,14 +14,13 @@ export default function App() {
       let value = Math.floor(Math.random() * 6) + 1
       newDice.push(value)
     }
-     console.log(newDice) 
+     return newDice
   }
-
-  allNewDice()
 
   const dieElements = dice.map(die => (
     <Die 
-    value = {die.value}
+    key = {die}
+    value = {die}
     />
   ))
 
