@@ -5,6 +5,8 @@ import "./styles/Die.css"
 import "./styles/General.css"
 
 export default function App() {
+
+  const[dice, setDice] = useState(allNewDice())
   
   function allNewDice() {
     const newDice = []
@@ -17,6 +19,12 @@ export default function App() {
 
   allNewDice()
 
+  const dieElements = dice.map(die => (
+    <Die 
+    value = {die.value}
+    />
+  ))
+
   return (
     <main className="tenzies-app">
       <h1 className="game-title">Tenzies</h1>
@@ -25,16 +33,7 @@ export default function App() {
         at its current value between rolls.
       </h3>
       <div className="dice-grid">
-        <Die value={3}/>
-        <Die value={3}/>
-        <Die value={3}/>
-        <Die value={3}/>
-        <Die value={3}/>
-        <Die value={3}/>
-        <Die value={3}/>
-        <Die value={3}/>
-        <Die value={3}/>
-        <Die value={3}/>
+        {dieElements}
       </div>
     </main>
   )
