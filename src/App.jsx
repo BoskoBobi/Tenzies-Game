@@ -27,6 +27,7 @@ export default function App() {
   const dieElements = dice.map(die => (
     <Die 
     value = {die.value}
+    isHeld = {die.isHeld}
     />
   ))
 
